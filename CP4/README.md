@@ -34,5 +34,15 @@ The submission format should be normalized to:
  
 Where,
  "question_id" is the question number, 
- "answer" is an array of answer(s) or an empty array if no answer required 	for a query, and 
+ "answer" is an array of answer(s) or an empty array if no answer required for a query, and 
  "ads" are the _ids associated with the results.
+ 
+ 
+ 
+ 
+ ####Standardization Format for Submission:
+ Email : joannacandoit@workplace.com
+ Phone : xxxx-xxxxxx
+ Address : 123 Make Way, Secret Town, CA 12575
+ Price : 80,120,100,50
+ Name : Joanna Candoit
