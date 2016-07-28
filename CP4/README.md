@@ -39,10 +39,9 @@ Where,
  
  
  
- 
- ####Standardization Format for Submission:
- Email : joannacandoit@workplace.com
- Phone : xxxx-xxxxxx
- Address : 123 Make Way, Secret Town, CA 12575
- Price : 80,120,100,50
- Name : Joanna Candoit
+### Standardization Format for Submission:
+	* Email : joannacandoit@workplace.com
+	* Phone : xxxx-xxxxxx
+	* Address : 123 Make Way, Secret Town, CA 12575
+	* Price : 80,120,100,50
+	* Name : Joanna Candoit
