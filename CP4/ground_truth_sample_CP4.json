@@ -1,7 +1,7 @@
-{"question_id": 1, "answer": ["Fake LLC, 123 Fake Street"], "ads": ["QQED1234GH", "HH68DN95N3", "B69DB59DH2", "E7F04BD7S0F", "C70ED8GH4F", "Z7DF88FDK9", "LP9D9JNB74", "D8B39H7GG4", "NNS8U74G3B", "RRT6U74G3B", "SS4RU74G3B", "W3NHU74G3B"]}
-{"question_id": 2, "answer": [100, 80, 50], "ads": ["FFEE1234GH", "GHJNDF95N3", "PO90F59DH2", "LP0J4BD7S0F", "MK908GH4F", "K9LN88FDK9", "M9PF9JNB74", "JN7F9H7GG4", "W3NHU74G3B", "NNS8U74G3B", "C70ED8GH4F", "HH68DN95N3", "QQED1234GH"]}
-{"question_id": 3, "ads": ["JU751234GH", "PL90DF95N3", "KK8EF59DH2", "DD464BD7S0F", "BB7U8GH4F", "DQ4G88FDK9", "AAX49JNB74", "YY7U9H7GG4", "IN7H77FB44", "CCF5U74G3B", "QQED1234GH", "FFEE1234GH"]}
-{"question_id": 4, "answer": ["brown", "red"], "ads": ["EER51234GH", "HH78DF95N3", "GF6YF59DH2", "W3E54BD7S0F", "V6Y78GH4F", "PL9688FDK9"]}
-{"question_id": 5, "answer": [100, 50], "ads": ["HH78DF95N3", "GF6YF59DH2", "W3E54BD7S0F", "V6Y78GH4F", "PL9688FDK9"]}
-{"question_id": 6, "answer": ["Some Place, 456 New Street"], "ads": ["EER51234GH", "HH78DF95N3", "GF6YF59DH2", "W3E54BD7S0F", "V6Y78GH4F", "PL9688FDK9"]}
-{"question_id": 7, "answer": ["Another Place, 789 Old Street"], "ads": ["GHJNDF95N3", "LP0J4BD7S0F", "GF6YF59DH2", "K9LN88FDK9", "V6Y78GH4F", "Z7DF88FDK9"]}
+{"question_id": "1", "answer": [{"business": ["Fake LLC, 123 Fake Street"], "ads": "QQED1234GH,HH68DN95N3,B69DB59DH2,E7F04BD7S0F,C70ED8GH4F"}]}
+{"question_id": "2", "answer": [{"rate": [100,80,50], "ads": "FFEE1234GH,GHJNDF95N3,PO90F59DH2,LP0J4BD7S0F,MK908GH4F,K9LN88FDK9,C70ED8GH4F"}]}
+{"question_id": "3", "answer": [{"ads": "JU751234GH,PL90DF95N3,KK8EF59DH2,DD464BD7S0F,BB7U8GH4F,DQ4G88FDK9,AAX49JNB74"}]}
+{"question_id": "4", "answer": [{"color": ["brown", "red"], "ads": "EER51234GH,HH78DF95N3,GF6YF59DH2,W3E54BD7S0F,V6Y78GH4F,PL9688FDK9"}]}
+{"question_id": "5", "answer": [{"rate": [100,50,60], "ads": "HH78DF95N3,GF6YF59DH2,W3E54BD7S0F,V6Y78GH4F,PL9688FDK9"}]}
+{"question_id": "6", "answer": [{"business": ["Some Place, 456 New Street"], "ads": "EER51234GH,HH78DF95N3,GF6YF59DH2,W3E54BD7S0F,V6Y78GH4F"}]}
+{"question_id": "7", "answer": [{"business": ["Another Place, 789 Old Street"], "ads": "GHJNDF95N3,LP0J4BD7S0F,GF6YF59DH2,K9LN88FDK9,V6Y78GH4F,Z7DF88FDK9"}]}

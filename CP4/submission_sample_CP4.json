@@ -1,6 +1,6 @@
-{"question_id": 1, "answer": ["Fake LLC, 123 Fake Street"], "ads": ["QQED1234GH", "HH68DN95N3", "B69DB59DH2", "E7F04BD7S0F", "C70ED8GH4F", "Z7DF88FDK9", "LP9D9JNB74", "D8B39H7GG4", "J0D977FB44", "NNS8U74G3B"]}
-{"question_id": 2, "answer": [100, 80, 60, 50], "ads": ["FFEE1234GH", "GHJNDF95N3", "PO90F59DH2", "LP0J4BD7S0F", "MK908GH4F", "K9LN88FDK9", "M9PF9JNB74", "JN7F9H7GG4", "M9PL77FB44", "W3NHU74G3B"]}
-{"question_id": 3, "ads": ["JU751234GH", "PL90DF95N3", "KK8EF59DH2", "DD464BD7S0F", "BB7U8GH4F", "DQ4G88FDK9", "AAX49JNB74", "YY7U9H7GG4", "IN7H77FB44", "CCF5U74G3B"]}
-{"question_id": 4, "answer": ["brown"], "ads": ["EER51234GH", "HH78DF95N3", "GF6YF59DH2", "W3E54BD7S0F", "V6Y78GH4F", "PL9688FDK9", "W3E59JNB74", "BY789H7GG4", "LI9077FB44", "V5H7U74G3B"]}
-{"question_id": 6, "answer": ["Some Place, 456 New Street"], "ads": ["KK8EF59DH2", "HH78DF95N3", "GF6YF59DH2", "W3E54BD7S0F", "PL9688FDK9"]}
-{"question_id": 7, "ads": ["PL90DF95N3", "HH68DN95N3", "QQED1234GH", "K9LN88FDK9", "V6Y78GH4F", "Z7DF88FDK9"]}
+{"question_id": "1", "answer": [{"business": ["Fake LLC, 123 Fake Street"], "ads": "QQED1234GH,B69DB59DH2,C70ED8GH4F,Z7DF88FDK9"}]}
+{"question_id": "2", "answer": [{"rate": [100,80,50], "ads": "FFEE1234GH,GHJNDF95N3,PO90F59DH2,LP0J4BD7S0F,MK908GH4F,K9LN88FDK9,C70ED8GH4F"}]}
+{"question_id": "3", "answer": [{"ads": "JU751234GH,PL90DF95N3,KK8EF59DH2,DD464BD7S0F,BB7U8GH4F,DQ4G88FDK9,AAX49JNB74"}]}
+{"question_id": "4", "answer": [{"color": ["brown", "red"], "ads": "EER51234GH,HH78DF95N3,GF6YF59DH2,W3E54BD7S0F,V6Y78GH4F,PL9688FDK9"}]}
+{"question_id": "5", "answer": [{"rate": [100,50], "ads": "HH78DF95N3,GF6YF59DH2,W3E54BD7S0F,V6Y78GH4F,PL9688FDK9"}]}
+{"question_id": "7", "answer": [{"business": ["Another Place, 788 Old Street"], "ads": "LP0J4BD7S0F,GF6YF59DH2,K9LN88FDK9,V6Y78GH4F,Z7DF88FDK9"}]}

@@ -39,19 +39,29 @@ for entry in gt_dict.keys():
 		print("Submission for question id {0} not found".format(entry))
 		skipped_questions.append(entry)
 		continue
-	ads = set(gt['ads']) & set(sub['ads'])
-	temp_dict['recall'] = (len(ads) * 100)/float(len(gt['ads']))
-	recalls.append((len(ads) * 100)/float(len(gt['ads'])))
 
-	#TODO Answer "score" is simply recall of answer list?
-	if 'answer' in gt.keys():
-		# If submission also has answer, score it
-		if 'answer' in sub.keys():
-			answers = set(gt['answer']) & set(sub['answer'])
-			temp_dict['answer_score'] = (len(answers) * 100)/float(len(gt['answer']))
-		# If submission does not have answer, score it as zero
+	# 'answer' is a list of dicts.  We are only concerned with the first dict.
+	# Each dict must contains the key 'ads'.
+	for key in gt['answer'][0].keys():
+		if key =='ads':
+			gt_ads = gt['answer'][0][key].split(',')
+			sub_ads = sub['answer'][0][key].split(',')
+			overlap = set(gt_ads) & set(sub_ads)
+			recall = (len(overlap) * 100)/float(len(gt_ads))
+			recalls.append(recall)
+			temp_dict['RECALL'] = recall
+
+		# Assumes at most one other key may be given
 		else:
-			temp_dict['answer_score'] = 0.0
+			# Some submissions may not provide answers to questions
+			try:
+				# This assumes formatting of strings (e.g., addresses)
+				# must be perfect
+				overlap = set(gt['answer'][0][key]) & set(sub['answer'][0][key])
+				recall = (len(overlap) * 100)/float(len(gt['answer'][0][key]))
+			except:
+				recall = 0.0
+			temp_dict['ANSWER'] = recall
 
 	results_dict[entry] = temp_dict
 	del(sub)
@@ -61,9 +71,8 @@ avg_recall =  sum(recalls)/float(len(recalls))
 # DEBUG
 for entry in results_dict.keys():
 	print("Question ID {0}:".format(entry), file=output_file)
-	if 'answer_score' in results_dict[entry].keys():
-		print("ANSWER SCORE: {0}".format(results_dict[entry]['answer_score']), file=output_file)
-	print("RECALL: {0}".format(results_dict[entry]['recall']), file=output_file)
+	for key in results_dict[entry].keys():
+		print("{0}: {1}".format(key, results_dict[entry][key]), file=output_file)
 	print(" ", file=output_file)
 
 print("AVERAGE RECALL FOR ALL QUESTIONS ANSWERED: {0}".format(avg_recall), file=output_file)
