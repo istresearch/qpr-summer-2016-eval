@@ -34,6 +34,10 @@ sub_rank = {}
 for entry in sub_list:
 	# Correctly parse question id
 	q_id = entry['question_id'].split('.')[-1]
+	# Hand jam correction
+	if entry['question_id'] == '1636.1818':
+		q_id = '1820'
+
 	# Only evaluate questions for which there is ground truth
 	if q_id in gt_key.keys():
 		ads = []
@@ -56,10 +60,16 @@ for entry in sub_list:
 for question in sub_rank.keys():
 	sub_ads = sub_rank[question]
 	ans_ads = gt_key[question]
-#	# Debug
-#	print(question)
-#	print(sub_ads)
-#	print(ans_ads)
+
+#	# DEBUG ###################
+#	if question == '83':
+#		same = set(sub_ads) & set(ans_ads)
+#		print(question)
+#		print(sub_ads)
+#		print(len(ans_ads))
+#		print(len(same))
+	#############################
+
 
 	# Here we use:
 	# DCG = SUM( (2^rel_i - 1) / (log_2(i+1)) ) = SUM( 1 / (log_2(i+1)) )
