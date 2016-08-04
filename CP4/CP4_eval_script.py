@@ -100,9 +100,8 @@ for question in sub_rank.keys():
 	nDCG = DCG/maxDCG
 
 	# Print to output file
-	print("Question: ", question, file=output_file)
-	print("Normalized Discounted Cumulative Gain (DCG): ", nDCG, file=output_file)
-	print("", file=output_file)
+	print("{0},{1}".format(question,nDCG), file=output_file)
+
 
 
 
