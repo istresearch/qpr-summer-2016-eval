@@ -1,6 +1,8 @@
 GT.json
 GT_cleaned.json
 usc-isi-*
+result_*
+gt_result*
 uncharted_tellfinder_default.json
 saved_output_sample_CP4.txt
 *-eval.txt
