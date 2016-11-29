@@ -26,10 +26,17 @@ The file contains an image showing the reciever operating characteristic (ROC) c
 
 Note that while this sample output file is in PDF format, the output format is variable and is dependent on the tag of the output file name provided in the command to run the evaluation script.  For example, substituting `output_sample_CP1.pdf` for `output_sample_CP1.png` in the example usage command below will produce an output file format of PNG rather than PDF.
 
+### output_cg_sample_CP1.pdf
+This file provides a sample of expected output of the evaluation script when run on the sample data files provided with the example usage command shown below.
+
+The file contains an image showing the cumulative gain chart for the submission data against the ground truth data.  It also provides a linear baseline (the dotted red line) for comparison.
+
+Note that while this sample output file is in PDF format, the output format is variable and is dependent on the tag of the output file name provided in the command to run the evaluation script.  For example, substituting `output_cg_sample_CP1.pdf` for `output_cg_sample_CP1.png` in the example usage command below will produce an output file format of PNG rather than PDF.
+
 ### Example Usage
 
-Note that the file names given in the example usage command below (i.e., `ground_truth_sample_CP1.json submission_sample_CP1.json output_sample_CP1.pdf`) are example file names and can be substituted for the appropriate file names.
+Note that the file names given in the example usage command below (i.e., `ground_truth_sample_CP1.json submission_sample_CP1.json output_sample_CP1.pdf output_cg_sample_CP1.pdf`) are example file names and can be substituted for the appropriate file names.
 
-To run the evaluation of submission data contained in a file named `submission_sample_CP1.json` against ground truth data contained in a file named `ground_truth_sample_CP1.json` and save the output to a new file named `output_sample_CP1.pdf` use:
+To run the evaluation of submission data contained in a file named `submission_sample_CP1.json` against ground truth data contained in a file named `ground_truth_sample_CP1.json` and save the output to new files named `output_sample_CP1.pdf` and `output_cg_sample_CP1.pdf` use:
 
-`python CP1_eval_script.py ground_truth_sample_CP1.json submission_sample_CP1.json output_sample_CP1.pdf`
+`python CP1_eval_script.py ground_truth_sample_CP1.json submission_sample_CP1.json output_sample_CP1.pdf output_cg_sample_CP1.pdf`

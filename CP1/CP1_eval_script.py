@@ -5,7 +5,7 @@ from sklearn.metrics import roc_curve, roc_auc_score
 import sys
 import json
 
-# how to use: python CP1_eval_script.py ground_truth_sample_CP1.json submission_sample_CP1.json output_sample_CP1.pdf
+# how to use: python CP1_eval_script.py ground_truth_sample_CP1.json submission_sample_CP1.json output_sample_CP1.pdf output_cg_chart.pdf
 
 ################################################
 # do not edit - eval data
@@ -32,6 +32,58 @@ sub_outputs.close()
 ################################################
 
 ################################################
+def lift_chart(gt_id0, gt_scores0, sub_id0, sub_scores0):
+
+    ############################################
+    # create dictionaries to match ID to scores (both gt_score and sub_score)
+    gt_dict = {}
+    for i in xrange(0,len(gt_id0)):
+        gt_dict[gt_id0[i]] = {}
+        gt_dict[gt_id0[i]]["gt"] = gt_scores0[i]
+    for i in xrange(0,len(sub_id0)):
+        if not gt_dict.has_key(sub_id0[i]):
+            print "GROUND TRUTH MISSING SUBMISSION ID: ", sub_id0[i], ". REMOVING ITEM."
+            sub_id0.remove(sub_id0[i])
+            continue
+        else:
+            gt_dict[sub_id0[i]]["sub"] = sub_scores0[i]
+
+    ############################################
+    # sort user-submitted IDs/predictions by their probability of class 1
+    sub_id0, sub_scores0 = zip(*sorted(zip(sub_id0, sub_scores0), key=lambda(x):x[1])) 
+    
+    ############################################
+    # map to x, y data for a chart
+    x = []
+    y = []
+    y_random = []
+    i = 0
+    j = 0
+    for item in sub_id0[::-1]:
+        x.append(i+1)
+        #x.append(sub_dict[item])
+        j += gt_dict[item]["gt"]
+        y.append(j)
+        i += 1
+        
+    ############################################
+    # create benchmark (straight line)
+    for item in x:
+        y_random.append(item * float(max(y)) / float(len(x)))
+        
+    ############################################
+    # plot
+    fig = plt.figure()
+    plt.plot(x, y, '-', x, y_random, 'r--')
+    title = 'Cumulative Gains Chart'
+    plt.title(title)
+    plt.ylabel("Cumulative True Positives")
+    plt.xlabel("Cumulative IDs (Sorted by Prediction Confidence)")
+    #plt.show()
+    plt.savefig(sys.argv[4])
+################################################    
+    
+################################################
 # note that if you did not include ids but instead only phone numbers in your file, the below needs modification
 # align ground truth and submission by cluster_id
 
@@ -46,6 +98,7 @@ elif any([a != b for a, b in zip(sub_id, gt_id)]):
 ################################################ 
 
 else:
+    lift_chart(gt_id, gt_scores, sub_id, sub_scores)
     fpr ,tpr, thresholds = roc_curve(gt_scores, sub_scores)
     auc = roc_auc_score(gt_scores, sub_scores)
     fig = plt.figure()
