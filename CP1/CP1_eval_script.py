@@ -32,7 +32,7 @@ sub_outputs.close()
 ################################################
 
 ################################################
-def lift_chart(gt_id0, gt_scores0, sub_id0, sub_scores0):
+def cg_chart(gt_id0, gt_scores0, sub_id0, sub_scores0):
 
     ############################################
     # create dictionaries to match ID to scores (both gt_score and sub_score)
@@ -41,7 +41,7 @@ def lift_chart(gt_id0, gt_scores0, sub_id0, sub_scores0):
         gt_dict[gt_id0[i]] = {}
         gt_dict[gt_id0[i]]["gt"] = gt_scores0[i]
     for i in xrange(0,len(sub_id0)):
-        if not gt_dict.has_key(sub_id0[i]):
+        if not gt_dict.has_key(sub_id0[i]):     # this should be redundant (line 96), but just playing it safe
             print "GROUND TRUTH MISSING SUBMISSION ID: ", sub_id0[i], ". REMOVING ITEM."
             sub_id0.remove(sub_id0[i])
             continue
@@ -98,7 +98,7 @@ elif any([a != b for a, b in zip(sub_id, gt_id)]):
 ################################################ 
 
 else:
-    lift_chart(gt_id, gt_scores, sub_id, sub_scores)
+    cg_chart(gt_id, gt_scores, sub_id, sub_scores)
     fpr ,tpr, thresholds = roc_curve(gt_scores, sub_scores)
     auc = roc_auc_score(gt_scores, sub_scores)
     fig = plt.figure()
