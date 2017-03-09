@@ -25,8 +25,6 @@ for entry in team_A_submission:
         fail = 1
     if entry['score'] < 0.0 or entry['score'] > 1.0:
         print "WARNING: 'score' not between 0.0 and 1.0 as expected."
-    if len(entry['cluster_id']) != 64:
-        print "WARNING: 'cluster_id' length not = 64 characters as expected"
 
 if fail == 0:
     print "Submission format is valid."
